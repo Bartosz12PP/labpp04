@@ -1,21 +1,63 @@
-
-// labpp04.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
 #include <iostream>
+using namespace std;
 
+int dodawanie(int a, int b); //funkcja (zwracajaca wynik typu int)
+void wyswietlanie(int a, int b); //funkcja bedaca procedura :)
+void siema(string imie);
+void tabliczka();
+
+int zmiennaGlobalna = 10;
 int main()
 {
-    std::cout << "Hello World!\n";
+    //zad0
+    int a = 45, b = 25;
+    int suma = dodawanie(a, b);
+    cout << "Jesli dodam " << a << " do " << b << " to otrzymam " << suma << endl;
+    wyswietlanie(11, 22);
+    cout << "Zmienna globalna: " << zmiennaGlobalna << endl;
+    cout << "Wartosci a oraz b: " << a << " i " << b << endl;
+
+    //zad1
+    string imie;
+    cout << "podaj imie: ";
+    cin >> imie;
+    siema(imie);
+    tabliczka();
+    cout << "podaj a i b";
+    cin >> a >> b;
+
+
+
+
+
+
+
+
+
+
+    return 0;
+}
+int dodawanie(int a, int b) {
+    int wynik = a + b;
+    return wynik;
+}
+void wyswietlanie(int a, int b) {
+    cout << "Wynik procedury / funkcji z void: " << a + b << endl;
+    zmiennaGlobalna = 20;
+    a = 111;
+    b = 222;
+}
+void siema(string imie) {
+    cout << "Czesc " << imie << endl;
+}
+void tabliczka() {
+    cout << "Tabliczka mnozenia:" << endl;
+    for (int k = 1; k <= 10; k++) {
+        for (int l = 1; l <= 10; l++) {
+            cout << k * l << "\t";
+        }
+        cout << endl;
+
+    }
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
